@@ -32,3 +32,14 @@ ConfigService는 NestJS에서 제공하는 서비스 클래스로, 환경 변수
 IoC 컨테이너 등록: ConfigModule에서 ConfigService를 제공하며, 이 모듈이 ConfigService를 전역 서비스로 등록합니다.
 DI(Dependency Injection): ConfigService는 컨트롤러, 서비스, 모듈 등 필요한 곳에 자동으로 주입됩니다.
 Singleton 패턴: ConfigService는 애플리케이션 전역에서 하나의 인스턴스를 공유합니다.
+
+class-validator 설치
+npm install class-validator class-transformer
+
+nest g module auth
+nest g controller auth --no-spec
+nest g service auth --no-spec
+
+import * as bcrypt from 'bcrypt';
+npm install bcrypt
+npm install --save-dev @types/bcrypt

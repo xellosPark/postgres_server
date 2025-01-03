@@ -2,6 +2,9 @@ import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { typeORMConfig } from './configs/typeorm.config';
+import { AuthController } from './auth/auth.controller';
+import { AuthService } from './auth/auth.service';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -15,6 +18,9 @@ import { typeORMConfig } from './configs/typeorm.config';
       inject: [ConfigService], // ConfigService를 DI로 주입
       useFactory: typeORMConfig, // TypeORM 설정 팩토리 함수 사용
     }),
+    AuthModule,
   ],
+  controllers: [AuthController],
+  providers: [AuthService],
 })
 export class AppModule {}

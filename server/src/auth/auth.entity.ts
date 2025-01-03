@@ -28,4 +28,5 @@ export class Auth {
 
   @UpdateDateColumn() // 레코드 마지막 업데이트 시간 자동 저장
   updatedAt: Date;
+  
 }
